@@ -2,18 +2,6 @@
 #
 #
 #
-#require 'mysql2'
-#
-def getMySQL
-  begin
-    client = Mysql2::Client.new(:host => 'localhost', :username => 's3-to-ceph', :password =>      'NodhafmetIchoknyajianauquecisJonVekpaudd')
-    return client
-  rescue => e
-    puts "Waiting for MySQL connection, error: #{e}"
-    sleep 1 + rand
-  retry
-  end
-end
 
 def getProcessList(mysql = nil)
   if ! mysql.nil? 
